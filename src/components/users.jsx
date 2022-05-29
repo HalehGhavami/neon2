@@ -5,6 +5,12 @@ class Users extends Component {
   state = {
     users: [],
   };
+  //axios return a promise
+  async componentDidMount() {
+    const response = await axios.get('https://reqres.in/api/users');
+    console.log(response);
+    this.setState({ users: response.data.data });
+  }
   render() {
     return (
       <>
@@ -25,7 +31,7 @@ class Users extends Component {
                 </h4>
                 <h5>{user.email}</h5>
                 <div className="row">
-                  <div className="call-6">
+                  <div className="col-6">
                     <button
                       onClick={this.handleUpdate}
                       className="btn btn-sm btn-info"
@@ -33,7 +39,7 @@ class Users extends Component {
                       Update
                     </button>
                   </div>
-                  <div className="call-6">
+                  <div className="col-6">
                     <button
                       onClick={this.handleDelete}
                       className="btn btn-sm btn-danger"
