@@ -20,7 +20,7 @@ class Users extends Component {
         <div className="row ">
           {this.state.users.map((user) => {
             return (
-              <div className="col-4 text-center p-5">
+              <div key={user.id} className="col-4 text-center p-5">
                 <img
                   src={user.avatar}
                   style={{ borderRadius: '50%', width: '100px' }}
