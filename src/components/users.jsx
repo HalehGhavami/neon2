@@ -74,11 +74,28 @@ class Users extends Component {
     console.log(response.data);
   };
 
-  handleUpdate = (user) => {
-    console.log(user);
+  handleUpdate = async (user) => {
+    user.first_name = 'Update';
+    const response = await axios.put(
+      `https://reqres.in/api/users/${user.id}`,
+      user
+    );
+    console.log(response);
+    //we used fake api and we have to implement our updates manually in state array
+    const updatedUsers = [...this.state.users];
+    const index = updatedUsers.indexOf(user);
+    updatedUsers[index] = { ...user };
+    this.setState({ users: updatedUsers });
   };
 
-  handleDelete = (user) => {};
+  handleDelete = async (user) => {
+    const response = await axios.delete(
+      `https://reqres.in/api/users/${user.id}`
+    );
+    const newUsers = this.state.users.filter((u) => u.id !== user.id);
+    this.setState({ users: newUsers });
+    console.log(response);
+  };
 }
 
 export default Users;
