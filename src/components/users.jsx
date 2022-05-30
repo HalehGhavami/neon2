@@ -59,7 +59,18 @@ class Users extends Component {
       </>
     );
   }
-  handleCreate = () => {};
+  handleCreate = async () => {
+    const newUser = {
+      first_name: 'Haleh',
+      last_name: 'Ghavami',
+      email: 'hg030156@gmil.com',
+      avatar:
+        'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200',
+    };
+
+    const response = await axios.post('https://reqres.in/api/users', newUser);
+    console.log(response.data);
+  };
 
   handleUpdate = (user) => {
     console.log(user);
