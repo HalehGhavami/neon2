@@ -18,7 +18,8 @@ class App extends Component {
             <Route path="/users/:id" element={<User />} />
 
             <Route path="/users" element={<Users />} />
-            <Route path="/login" element={<Login />} />
+            {/* adding conditional parameter to URL */}
+            <Route path="/login/:timeStamp?" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/" exact element={<Home />} />
           </Routes>
