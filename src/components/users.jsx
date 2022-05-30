@@ -61,7 +61,9 @@ class Users extends Component {
   }
   handleCreate = () => {};
 
-  handleUpdate = (user) => {};
+  handleUpdate = (user) => {
+    console.log(user);
+  };
 
   handleDelete = (user) => {};
 }
