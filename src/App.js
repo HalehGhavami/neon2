@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Users from './components/users';
+import Login from './components/login';
+import Register from './components/register';
+import Home from './components/home';
 
 class App extends Component {
   render() {
@@ -8,7 +12,12 @@ class App extends Component {
       <>
         <Navbar />
         <div className="container mt-3">
-          <Users />
+          <Routes>
+            <Route path="/users" element={<Users />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/" exact element={<Home />} />
+          </Routes>
         </div>
       </>
     );
