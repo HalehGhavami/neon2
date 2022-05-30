@@ -69,6 +69,8 @@ class Users extends Component {
     };
 
     const response = await axios.post('https://reqres.in/api/users', newUser);
+    //adding new user to our prev.state
+    this.setState({ users: [...this.state.users, newUser] });
     console.log(response.data);
   };
 
