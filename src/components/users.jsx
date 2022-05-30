@@ -33,7 +33,9 @@ class Users extends Component {
                 <div className="row">
                   <div className="col-6">
                     <button
-                      onClick={this.handleUpdate}
+                      onClick={() => {
+                        this.handleUpdate(user);
+                      }}
                       className="btn btn-sm btn-info"
                     >
                       Update
@@ -41,7 +43,9 @@ class Users extends Component {
                   </div>
                   <div className="col-6">
                     <button
-                      onClick={this.handleDelete}
+                      onClick={() => {
+                        this.handleDelete(user);
+                      }}
                       className="btn btn-sm btn-danger"
                     >
                       Delete
