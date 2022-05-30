@@ -5,6 +5,7 @@ import Users from './components/users';
 import Login from './components/login';
 import Register from './components/register';
 import Home from './components/home';
+import User from './components/user';
 
 class App extends Component {
   render() {
@@ -13,6 +14,9 @@ class App extends Component {
         <Navbar />
         <div className="container mt-3">
           <Routes>
+            {/* id parameter for new URL */}
+            <Route path="/users/:id" element={<User />} />
+
             <Route path="/users" element={<Users />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
